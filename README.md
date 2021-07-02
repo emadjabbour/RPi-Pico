@@ -1,1 +1,14 @@
-# RPi-Pico
+# RPi-Pico-Blink
+import digitalio
+from board import *
+import time
+
+led = digitalio.DigitalInOut(GP0)
+led.direction = digitalio.Direction.OUTPUT
+
+while True:
+    led.value = True
+    time.sleep(1)
+    led.value = False
+    time.sleep(1)
+
