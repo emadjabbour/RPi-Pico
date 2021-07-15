@@ -1,0 +1,20 @@
+import pwmio
+import board
+from board import *
+import time
+
+led = pwmio.PWMOut(board.GP0, frequency=5000)
+dc= 0
+while True:
+    dc= dc+50
+    led.duty_cycle = dc
+    time.sleep(0.001)
+    if dc > 65000:
+        while dc >> 0:
+             dc= dc-50
+             led.duty_cycle=dc
+             time.sleep(0.001)
+            
+            
+            
+    
