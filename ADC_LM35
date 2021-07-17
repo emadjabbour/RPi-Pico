@@ -1,0 +1,18 @@
+import board
+from board import *
+import analogio
+import time 
+import microcontroller
+
+LM35 = analogio.AnalogIn(board.A2)
+
+while True:
+    t = 0
+    for x in range(50):
+        t+=LM35.value*(3.3/65535)*100
+        time.sleep(0.03)
+        
+    print("LM35 Temp= ",t/50)
+    print("CPU Sensor Temp= ",microcontroller.cpu.temperature)
+    
+    
