@@ -1,0 +1,17 @@
+import pwmio
+import analogio
+import board
+import time
+
+led = pwmio.PWMOut(board.GP0, frequency=1000)
+pot = analogio.AnalogIn(board.GP28)
+
+while True:
+    pv = pot.value - 1000
+    if pv < 0:
+        pv = 0
+    led.duty_cycle = pv  
+    print(pv)
+    time.sleep(0.01)
+    
+    
