@@ -1,3 +1,4 @@
+#written by Emad Jabbour https://www.youtube.com/c/emadjab
 import pwmio
 import analogio
 import board
